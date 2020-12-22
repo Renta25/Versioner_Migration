@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS accounts(
+    id  INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name TEXT NOT NULL,
+    surname TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    pass TEXT NOT NULL,
+    active BOOLEAN NOT NULL,
+    creator_id INT NOT NULL,
+    create_data DATETIME NOT NULL DEFAULT NOW(),
+    modifer_id INT,
+    modify_data DATETIME DEFAULT NULL ON UPDATE NOW()
+);
